@@ -40,13 +40,14 @@ Run these commands to clone the repository and launch the app:
 ### Clone Repository
 
 ```bash
-git clone [https://github.com/Irmb7108/ytdl-gui.git](https://github.com/Irmb7108/ytdl-gui.git) ~/ytdl-gui
+git clone https://github.com/Irmb7108/ytdl-gui.git
 ```
 
 ### Run Application
 
 ```bash
-python3 ~/ytdl-gui/main.py
+cd ytdl-gui
+python3 main.py
 ```
 
 ---
