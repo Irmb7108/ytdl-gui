@@ -1,10 +1,11 @@
-
+<p align="center">
+  <img width="599" height="675" alt="Screenshot_20260902_214938" src="https://github.com/user-attachments/assets/2e3d54f1-1dce-419d-b58a-5098a1e72975" />
+</p>
 # ⚡ YouTube Downloader GUI
 
 A modern, fast, and sleek YouTube Downloader crafted with **Python** and **PyQt6**, powered under the hood by **`yt-dlp`** and **`ffmpeg`**.
 
 Designed natively for Linux desktops with a tailored dark aesthetic, seamless anti-bot bypass mechanisms, and zero-friction media handling.
-<img width="599" height="675" alt="Screenshot_20260902_214938" src="https://github.com/user-attachments/assets/2e3d54f1-1dce-419d-b58a-5098a1e72975" />
 ---
 
 ## ⚡ 1. Install Dependencies
