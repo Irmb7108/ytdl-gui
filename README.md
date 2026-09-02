@@ -6,94 +6,44 @@ Designed natively for Linux desktops with a tailored dark aesthetic, seamless an
 
 ---
 
-## ⚡ Quick Install
+## ⚡ 1. Install Dependencies
+
+Run the single-line command matching your Linux distribution:
 
 ### Arch Linux / Manjaro
-
-1. Install dependencies:
 
 ```bash
 sudo pacman -S --needed python python-pyqt6 yt-dlp ffmpeg git
 ```
 
-2. Clone repository:
+### Ubuntu / Debian / Pop!_OS / Linux Mint
 
 ```bash
-git clone [https://github.com/Irmb7108/ytdl-gui.git](https://github.com/Irmb7108/ytdl-gui.git) ~/ytdl-gui
+sudo apt update && sudo apt install -y python3 python3-pyqt6 yt-dlp ffmpeg git
 ```
-
-3. Enter directory:
-
-```bash
-cd ~/ytdl-gui
-```
-
-4. Run application:
-
-```bash
-python main.py
-```
-
----
-
-### Ubuntu / Debian / GNOME (Pop!_OS, Mint)
-
-1. Update package lists:
-
-```bash
-sudo apt update
-```
-
-2. Install dependencies:
-
-```bash
-sudo apt install -y python3 python3-pyqt6 yt-dlp ffmpeg git
-```
-
-3. Clone repository:
-
-```bash
-git clone [https://github.com/Irmb7108/ytdl-gui.git](https://github.com/Irmb7108/ytdl-gui.git) ~/ytdl-gui
-```
-
-4. Enter directory:
-
-```bash
-cd ~/ytdl-gui
-```
-
-5. Run application:
-
-```bash
-python3 main.py
-```
-
----
 
 ### Fedora (Workstation / GNOME)
-
-1. Install dependencies:
 
 ```bash
 sudo dnf install -y python3 python3-pyqt6 yt-dlp ffmpeg git
 ```
 
-2. Clone repository:
+---
+
+## 🚀 2. Clone & Run
+
+Run these commands to clone the repository and launch the app:
+
+### Clone Repository
 
 ```bash
 git clone [https://github.com/Irmb7108/ytdl-gui.git](https://github.com/Irmb7108/ytdl-gui.git) ~/ytdl-gui
 ```
 
-3. Enter directory:
+### Run Application
 
 ```bash
-cd ~/ytdl-gui
-```
-
-4. Run application:
-
-```bash
-python3 main.py
+python3 ~/ytdl-gui/main.py
 ```
 
 ---
@@ -125,18 +75,49 @@ python3 main.py
 
 ---
 
-## 🖥️ Desktop Menu Integration
+## 🖥️ Desktop Menu Integration (Optional)
+
+Add the application to your system app launcher with a single command:
 
 ### For KDE Plasma
 
-1. Create application entry:
-
 ```bash
-mkdir -p ~/.local/share/applications
+mkdir -p ~/.local/share/applications && printf "[Desktop Entry]\nName=YouTube Downloader\nComment=Download YouTube Videos and Audio\nExec=python3 %s/ytdl-gui/main.py\nIcon=download-symbolic\nTerminal=false\nType=Application\nCategories=Network;AudioVideo;Video;Audio;\nStartupNotify=true\n" "$HOME" > ~/.local/share/applications/ytdl-gui.desktop && chmod +x ~/.local/share/applications/ytdl-gui.desktop && kbuildsycoca6 2>/dev/null || kbuildsycoca5 2>/dev/null && update-desktop-database ~/.local/share/applications 2>/dev/null
 ```
 
+### For GNOME
+
 ```bash
-cat << 'EOF' > ~/.local/share/applications/ytdl-gui.desktop
-[Desktop Entry]
-Name=YouTube Downloader
-Comment=Download YouTube Videos and
+mkdir -p ~/.local/share/applications && printf "[Desktop Entry]\nName=YouTube Downloader\nComment=Download YouTube Videos and Audio\nExec=python3 %s/ytdl-gui/main.py\nIcon=folder-download-symbolic\nTerminal=false\nType=Application\nCategories=Network;AudioVideo;Video;Audio;\nStartupNotify=true\n" "$HOME" > ~/.local/share/applications/ytdl-gui.desktop && chmod +x ~/.local/share/applications/ytdl-gui.desktop && update-desktop-database ~/.local/share/applications 2>/dev/null
+```
+
+---
+
+## 🔄 Update
+
+To update your local installation to the latest version:
+
+```bash
+cd ~/ytdl-gui && git pull
+```
+
+---
+
+## 🛠️ Tech Stack
+
+- **Language:** Python 3
+- **GUI Toolkit:** PyQt6
+- **Downloader Core:** yt-dlp
+- **Media Processor:** FFmpeg
+
+---
+
+## 👤 Author
+
+- **ir-mb** - https://github.com/Irmb7108
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
