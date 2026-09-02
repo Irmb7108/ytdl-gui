@@ -6,20 +6,33 @@ Designed natively for Linux desktops with a tailored dark aesthetic, seamless an
 
 ---
 
-## ⚡ Quick Install (Arch Linux)
+## ⚡ Quick Install
 
-Run these commands in your terminal to install dependencies and run the app:
+Run these commands based on your Linux distribution:
 
-### 1. Install Dependencies
+### Arch Linux / Manjaro
 ```bash
 sudo pacman -S --needed python python-pyqt6 yt-dlp ffmpeg git
-```
-
-### 2. Clone & Run
-```bash
 git clone [https://github.com/Irmb7108/ytdl-gui.git](https://github.com/Irmb7108/ytdl-gui.git) ~/ytdl-gui
 cd ~/ytdl-gui
 python main.py
+```
+
+### Ubuntu / Debian / GNOME (Pop!_OS, Linux Mint)
+```bash
+sudo apt update
+sudo apt install -y python3 python3-pyqt6 yt-dlp ffmpeg git
+git clone [https://github.com/Irmb7108/ytdl-gui.git](https://github.com/Irmb7108/ytdl-gui.git) ~/ytdl-gui
+cd ~/ytdl-gui
+python3 main.py
+```
+
+### Fedora (Workstation / GNOME)
+```bash
+sudo dnf install -y python3 python3-pyqt6 yt-dlp ffmpeg git
+git clone [https://github.com/Irmb7108/ytdl-gui.git](https://github.com/Irmb7108/ytdl-gui.git) ~/ytdl-gui
+cd ~/ytdl-gui
+python3 main.py
 ```
 
 ---
@@ -51,10 +64,11 @@ python main.py
 
 ---
 
-## 🖥️ Add to Desktop Menu (KDE / GNOME)
+## 🖥️ Desktop Menu Integration
 
-To launch the app directly from your application launcher, run:
+Add the application directly to your system application launcher / search:
 
+### For KDE Plasma
 ```bash
 mkdir -p ~/.local/share/applications
 
@@ -72,6 +86,29 @@ EOF
 
 sed -i "s/\$USER/$USER/g" ~/.local/share/applications/ytdl-gui.desktop
 chmod +x ~/.local/share/applications/ytdl-gui.desktop
+kbuildsycoca6 2>/dev/null || kbuildsycoca5 2>/dev/null
+update-desktop-database ~/.local/share/applications 2>/dev/null
+```
+
+### For GNOME (Dash / Applications Overview)
+```bash
+mkdir -p ~/.local/share/applications
+
+cat << 'EOF' > ~/.local/share/applications/ytdl-gui.desktop
+[Desktop Entry]
+Name=YouTube Downloader
+Comment=Download YouTube Videos and Audio
+Exec=/usr/bin/env python3 /home/$USER/ytdl-gui/main.py
+Icon=folder-download-symbolic
+Terminal=false
+Type=Application
+Categories=Network;AudioVideo;Video;Audio;
+StartupNotify=true
+EOF
+
+sed -i "s/\$USER/$USER/g" ~/.local/share/applications/ytdl-gui.desktop
+chmod +x ~/.local/share/applications/ytdl-gui.desktop
+gio set ~/.local/share/applications/ytdl-gui.desktop metadata::trusted true 2>/dev/null
 update-desktop-database ~/.local/share/applications 2>/dev/null
 ```
 
