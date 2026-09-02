@@ -1,3 +1,5 @@
+Markdown
+
 <div align="center">
 
 # ⚡ YouTube Downloader GUI
@@ -49,3 +51,63 @@ Designed natively for Linux desktops with a tailored dark aesthetic, seamless an
 **Arch Linux / Manjaro / EndeavourOS:**
 ```bash
 sudo pacman -S --needed python python-pyqt6 yt-dlp ffmpeg
+
+Debian / Ubuntu:
+Bash
+
+sudo apt update
+sudo apt install python3 python3-pyqt6 yt-dlp ffmpeg
+
+Fedora:
+Bash
+
+sudo dnf install python3 python3-pyqt6 yt-dlp ffmpeg
+
+2. Clone the Repository
+Bash
+
+git clone [https://github.com/Irmb7108/ytdl-gui.git](https://github.com/Irmb7108/ytdl-gui.git)
+cd ytdl-gui
+
+3. Launch
+Bash
+
+python main.py
+
+🖥️ Desktop Integration (KDE Plasma / GNOME)
+
+To launch the app directly from your application menu or application runner:
+Bash
+
+cat << 'EOF' > ~/.local/share/applications/ytdl-gui.desktop
+[Desktop Entry]
+Name=YouTube Downloader
+Comment=Download YouTube Videos and Audio
+Exec=python /home/$USER/ytdl-gui/main.py
+Icon=download-symbolic
+Terminal=false
+Type=Application
+Categories=Network;AudioVideo;Video;Audio;
+StartupNotify=true
+EOF
+sed -i "s/\$USER/$USER/g" ~/.local/share/applications/ytdl-gui.desktop
+chmod +x ~/.local/share/applications/ytdl-gui.desktop
+update-desktop-database ~/.local/share/applications 2>/dev/null
+
+🛠️ Tech Stack
+
+    Language: Python 3
+
+    GUI Toolkit: PyQt6 (Qt Widgets, QProcess, QSettings)
+
+    Downloader Core: yt-dlp
+
+    Media Processor: FFmpeg
+
+👤 Author
+
+    ir-mb - GitHub Profile
+
+📄 License
+
+This project is licensed under the MIT License — see the LICENSE file for details.
