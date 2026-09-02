@@ -1,5 +1,7 @@
-Markdown
+```bash
+cd ~/ytdl-gui
 
+cat << 'EOF' > README.md
 <div align="center">
 
 # ⚡ YouTube Downloader GUI
@@ -18,6 +20,28 @@ Designed natively for Linux desktops with a tailored dark aesthetic, seamless an
 
 ---
 
+## ⚡ One-Liner Quick Install (Arch Linux)
+
+Run this single command in your terminal to install dependencies, clone the repo, set up the desktop shortcut, and launch the app immediately:
+
+```bash
+sudo pacman -S --needed --noconfirm python python-pyqt6 yt-dlp ffmpeg git && git clone [https://github.com/Irmb7108/ytdl-gui.git](https://github.com/Irmb7108/ytdl-gui.git) ~/ytdl-gui && cd ~/ytdl-gui && chmod +x main.py && cat << 'DESK' > ~/.local/share/applications/ytdl-gui.desktop
+[Desktop Entry]
+Name=YouTube Downloader
+Comment=Download YouTube Videos and Audio
+Exec=python /home/$USER/ytdl-gui/main.py
+Icon=download-symbolic
+Terminal=false
+Type=Application
+Categories=Network;AudioVideo;Video;Audio;
+StartupNotify=true
+DESK
+sed -i "s/\$USER/$USER/g" ~/.local/share/applications/ytdl-gui.desktop && update-desktop-database ~/.local/share/applications 2>/dev/null && python main.py
+
+```
+
+---
+
 ## ✨ Features
 
 * **🎨 Cyber Dark UI:** Polished, native-feeling dark mode with clean visual hierarchy and dynamic green neon progress tracking.
@@ -33,7 +57,7 @@ Designed natively for Linux desktops with a tailored dark aesthetic, seamless an
 ## 📋 Supported Formats
 
 | Mode | Format / Preset | Output Container |
-| :--- | :--- | :--- |
+| --- | --- | --- |
 | **Video** | Best Available | `.mp4` |
 | **Video** | 1080p Full HD | `.mp4` |
 | **Video** | 720p HD | `.mp4` |
@@ -44,40 +68,55 @@ Designed natively for Linux desktops with a tailored dark aesthetic, seamless an
 
 ---
 
-## 🚀 Installation & Setup
+## 🚀 Step-by-Step Manual Setup
 
 ### 1. Install Dependencies
 
 **Arch Linux / Manjaro / EndeavourOS:**
+
 ```bash
 sudo pacman -S --needed python python-pyqt6 yt-dlp ffmpeg
 
-Debian / Ubuntu:
-Bash
+```
 
-sudo apt update
-sudo apt install python3 python3-pyqt6 yt-dlp ffmpeg
+**Debian / Ubuntu:**
 
-Fedora:
-Bash
+```bash
+sudo apt update && sudo apt install -y python3 python3-pyqt6 yt-dlp ffmpeg
 
-sudo dnf install python3 python3-pyqt6 yt-dlp ffmpeg
+```
 
-2. Clone the Repository
-Bash
+**Fedora:**
 
+```bash
+sudo dnf install -y python3 python3-pyqt6 yt-dlp ffmpeg
+
+```
+
+---
+
+### 2. Clone & Run
+
+```bash
+# Clone repository
 git clone [https://github.com/Irmb7108/ytdl-gui.git](https://github.com/Irmb7108/ytdl-gui.git)
+
+# Enter project directory
 cd ytdl-gui
 
-3. Launch
-Bash
-
+# Run the application
 python main.py
 
-🖥️ Desktop Integration (KDE Plasma / GNOME)
+```
 
-To launch the app directly from your application menu or application runner:
-Bash
+---
+
+## 🖥️ Desktop Entry & App Launcher Integration
+
+Add the application to your KDE Plasma / GNOME launcher menu:
+
+```bash
+mkdir -p ~/.local/share/applications
 
 cat << 'EOF' > ~/.local/share/applications/ytdl-gui.desktop
 [Desktop Entry]
@@ -90,24 +129,50 @@ Type=Application
 Categories=Network;AudioVideo;Video;Audio;
 StartupNotify=true
 EOF
+
 sed -i "s/\$USER/$USER/g" ~/.local/share/applications/ytdl-gui.desktop
 chmod +x ~/.local/share/applications/ytdl-gui.desktop
 update-desktop-database ~/.local/share/applications 2>/dev/null
 
-🛠️ Tech Stack
+```
 
-    Language: Python 3
+---
 
-    GUI Toolkit: PyQt6 (Qt Widgets, QProcess, QSettings)
+## 🔄 Updating to Latest Version
 
-    Downloader Core: yt-dlp
+To fetch updates and new features, run:
 
-    Media Processor: FFmpeg
+```bash
+cd ~/ytdl-gui && git pull
 
-👤 Author
+```
 
-    ir-mb - GitHub Profile
+---
 
-📄 License
+## 🛠️ Tech Stack
 
-This project is licensed under the MIT License — see the LICENSE file for details.
+* **Language:** Python 3
+* **GUI Toolkit:** PyQt6 (Qt Widgets, QProcess, QSettings)
+* **Downloader Core:** [yt-dlp](https://github.com/yt-dlp/yt-dlp)
+* **Media Processor:** [FFmpeg](https://ffmpeg.org/)
+
+---
+
+## 👤 Author
+
+* **ir-mb** - [GitHub Profile](https://www.google.com/search?q=https://github.com/Irmb7108)
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License — see the [LICENSE](https://www.google.com/search?q=LICENSE) file for details.
+EOF
+
+git add README.md
+git commit -m "docs: add one-liner install commands and quick setup section"
+git push
+
+```
+
+```
