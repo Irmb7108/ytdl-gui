@@ -12,7 +12,8 @@ Run these commands based on your Linux distribution:
 
 ### Arch Linux / Manjaro
 ```bash
-sudo pacman -S --needed python python-pyqt6 yt-dlp ffmpeg git
+sudo pacman -S --needed python python-pyqt6 yt-dlp ffmpeg git```
+```bash
 git clone [https://github.com/Irmb7108/ytdl-gui.git](https://github.com/Irmb7108/ytdl-gui.git) ~/ytdl-gui
 cd ~/ytdl-gui
 python main.py
