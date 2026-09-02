@@ -1,6 +1,7 @@
 <p align="center">
-  <img width="599" height="675" alt="Screenshot_20260902_214938" src="https://github.com/user-attachments/assets/2e3d54f1-1dce-419d-b58a-5098a1e72975" />
+  <img width="730" height="808" alt="Screenshot_20260902_215400" src="https://github.com/user-attachments/assets/0e1b0a68-ea95-4fd7-9a0e-44d22a9ca64d" />
 </p>
+
 # ⚡ YouTube Downloader GUI
 
 A modern, fast, and sleek YouTube Downloader crafted with **Python** and **PyQt6**, powered under the hood by **`yt-dlp`** and **`ffmpeg`**.
