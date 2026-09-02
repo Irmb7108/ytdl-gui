@@ -11,27 +11,29 @@ Designed natively for Linux desktops with a tailored dark aesthetic, seamless an
 Run these commands based on your Linux distribution:
 
 ### Arch Linux / Manjaro
-``
-sudo pacman -S --needed python python-pyqt6 yt-dlp ffmpeg git``
-``
-git clone [https://github.com/Irmb7108/ytdl-gui.git](https://github.com/Irmb7108/ytdl-gui.git) ~/ytdl-gui
+
+```bash
+sudo pacman -S --needed python python-pyqt6 yt-dlp ffmpeg git
+git clone https://github.com/Irmb7108/ytdl-gui.git ~/ytdl-gui
 cd ~/ytdl-gui
 python main.py
-``
+```
 
-### Ubuntu / Debian / GNOME (Pop!_OS, Linux Mint)
+### Ubuntu / Debian / GNOME (Pop!_OS, Mint)
+
 ```bash
 sudo apt update
 sudo apt install -y python3 python3-pyqt6 yt-dlp ffmpeg git
-git clone [https://github.com/Irmb7108/ytdl-gui.git](https://github.com/Irmb7108/ytdl-gui.git) ~/ytdl-gui
+git clone https://github.com/Irmb7108/ytdl-gui.git ~/ytdl-gui
 cd ~/ytdl-gui
 python3 main.py
 ```
 
 ### Fedora (Workstation / GNOME)
+
 ```bash
 sudo dnf install -y python3 python3-pyqt6 yt-dlp ffmpeg git
-git clone [https://github.com/Irmb7108/ytdl-gui.git](https://github.com/Irmb7108/ytdl-gui.git) ~/ytdl-gui
+git clone https://github.com/Irmb7108/ytdl-gui.git ~/ytdl-gui
 cd ~/ytdl-gui
 python3 main.py
 ```
@@ -70,6 +72,7 @@ python3 main.py
 Add the application directly to your system application launcher / search:
 
 ### For KDE Plasma
+
 ```bash
 mkdir -p ~/.local/share/applications
 
@@ -92,6 +95,7 @@ update-desktop-database ~/.local/share/applications 2>/dev/null
 ```
 
 ### For GNOME (Dash / Applications Overview)
+
 ```bash
 mkdir -p ~/.local/share/applications
 
@@ -136,7 +140,7 @@ cd ~/ytdl-gui && git pull
 
 ## 👤 Author
 
-- **ir-mb** - [GitHub Profile](https://github.com/Irmb7108)
+- **ir-mb** - [https://github.com/Irmb7108](https://github.com/Irmb7108)
 
 ---
 
