@@ -1,8 +1,4 @@
-```bash
-cd ~/ytdl-gui
 
-cat << 'EOF' > README.md
-<div align="center">
 
 # ⚡ YouTube Downloader GUI
 
